@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TON ASSAULT GAME</title>
+  <script src="https://telegram.org/js/telegram-web-app.js"></script>
+</head>
+<body style="text-align:center; font-family:Arial">
+
+  <h2>🔥 TON ASSAULT GAME 🔥</h2>
+
+  <p>Player HP: <span id="php">100</span></p>
+  <p>Enemy HP: <span id="ehp">100</span></p>
+
+  <button onclick="attack()">⚔️ ATTACK</button>
+
+  <script>
+    let playerHP = 100;
+    let enemyHP = 100;
+
+    function attack(){
+      let playerDamage = Math.floor(Math.random()*20)+5;
+      enemyHP -= playerDamage;
+      document.getElementById("ehp").innerText = enemyHP;
+
+      if(enemyHP <= 0){
+        alert("🔥 YOU WIN TON ASSAULT!");
+        return;
+      }
+
+      let enemyDamage = Math.floor(Math.random()*15)+5;
+      playerHP -= enemyDamage;
+      document.getElementById("php").innerText = playerHP;
+
+      if(playerHP <= 0){
+        alert("💀 YOU LOST TON ASSAULT!");
+      }
+    }
+  </script>
+
+</body>
+</html>
